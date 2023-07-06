@@ -9,7 +9,7 @@ def test_two_estimates
 
   devs = PlanningPoker.identify_extremes(estimates)
 
-  expected = ['Mauricio', 'Frank']
+  expected = %w[Mauricio Frank]
   assert_equal expected.sort, devs.sort
 end
 
@@ -22,6 +22,6 @@ def test_many_estimates
 
   devs = PlanningPoker.identify_extremes(estimates)
 
-  expected = ['Mauricio', 'Arie']
+  expected = %w[Mauricio Arie]
   assert_equal expected.sort, devs.sort
 end

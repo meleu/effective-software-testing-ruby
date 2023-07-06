@@ -12,6 +12,6 @@ def test_developers_with_same_estimates
 
   devs = PlanningPoker.identify_extremes(estimates)
 
-  expected = ['Mauricio', 'Arie']
+  expected = %w[Mauricio Arie]
   assert_equal expected.sort, devs.sort
 end

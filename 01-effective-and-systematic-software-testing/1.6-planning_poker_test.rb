@@ -4,6 +4,8 @@
 # NOTE: this is not really equivalent to the Listing 1.6 in the book!
 #
 # A promising gem to replace jqwik is Rantly: <https://github.com/rantly-rb/rantly>
+#
+# TODO: revisit this after reading chapter 5.
 
 def test_in_any_order
   100.times do
@@ -16,12 +18,11 @@ def test_in_any_order
 
     devs = PlanningPoker.identify_extremes(estimates)
 
-    expected = ['MrLowEstimate', 'MrHighEstimate']
+    expected = %w[MrLowEstimate MrHighEstimate]
 
     assert_equal expected.sort, devs.sort
   end
 end
-
 
 def estimates_generator
   estimates = []

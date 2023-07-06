@@ -25,7 +25,7 @@ class PlanningPokerTest < Minitest::Test
 
     devs = PlanningPoker.identify_extremes(estimates)
 
-    expected = ['Mauricio', 'Frank']
+    expected = %w[Mauricio Frank]
     assert_equal expected.sort, devs.sort
   end
 
@@ -38,7 +38,7 @@ class PlanningPokerTest < Minitest::Test
 
     devs = PlanningPoker.identify_extremes(estimates)
 
-    expected = ['Mauricio', 'Arie']
+    expected = %w[Mauricio Arie]
     assert_equal expected.sort, devs.sort
   end
 
@@ -53,7 +53,7 @@ class PlanningPokerTest < Minitest::Test
 
     devs = PlanningPoker.identify_extremes(estimates)
 
-    expected = ['Mauricio', 'Arie']
+    expected = %w[Mauricio Arie]
     assert_equal expected.sort, devs.sort
   end
 
@@ -82,12 +82,11 @@ class PlanningPokerTest < Minitest::Test
 
       devs = PlanningPoker.identify_extremes(estimates)
 
-      expected = ['MrLowEstimate', 'MrHighEstimate']
+      expected = %w[MrLowEstimate MrHighEstimate]
 
       assert_equal expected.sort, devs.sort
     end
   end
-
 
   def estimates_generator
     estimates = []
