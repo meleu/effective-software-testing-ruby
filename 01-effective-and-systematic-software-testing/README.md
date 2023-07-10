@@ -1,5 +1,17 @@
 # Chapter 1 - Effective and Systematic Software Testing
 
+## Caveats
+
+Listing 1.6 mentions **property-based testing** with [jqwik](https://jqwik.net/).
+I'm (still) not sure about the best way to do this property-based testing in
+Ruby. After googling, I think these are the 2 relevant options:
+
+- [Rantly](https://github.com/rantly-rb/rantly)
+- [PropCheck](https://github.com/Qqwy/ruby-prop_check)
+
+I plan to experiment them after reading Chapter 5, which is exactly about
+Property-based testing.
+
 ## Main takeaways
 
 ### The 7 Testing Principles
@@ -15,13 +27,18 @@
 ### Testing Pyramid
 
 ```
-more real      /         \
-and complex   /  manual   \       <-- exploratory tests
-  ^          /-------------\
-  |         / system tests  \     <-- tests the main/risky
-  |        /-----------------\        flow of the app
-  |       / integration tests \   <-- complex integrations
-  |      /---------------------\      with external services
-  |     /       unit tests      \ <-- all business rules
-  |    /-------------------------\    should be tested here
+                 /  \
+                /    \
+more real      /      \
+and complex   / manual \         <-- exploratory tests
+  ^          /----------\
+  |         /   system   \       <-- tests the main/risky
+  |        /    tests     \          flow of the app
+  |       /----------------\
+  |      /   integration    \    <-- complex integrations
+  |     /       tests        \       with external services
+  |    /----------------------\
+  |   /         unit           \ <-- all business rules
+  |  /          tests           \    should be tested here
+  | /----------------------------\
 ```

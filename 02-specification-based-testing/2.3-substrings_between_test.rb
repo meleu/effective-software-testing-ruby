@@ -1,5 +1,5 @@
 # Listing 2.3
-# Exploratory tests for substrings_between
+# Tests for substrings_between, part 1
 
 require 'minitest/autorun'
 
