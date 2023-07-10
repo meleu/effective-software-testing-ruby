@@ -17,5 +17,4 @@ maybe some caveats about the code translation).
 ## Dependencies
 
 The code in this repository was tested in Ruby 3.1.2 and Minitest 5.18.
-
 For more details, check the [Gemfile](./Gemfile).
