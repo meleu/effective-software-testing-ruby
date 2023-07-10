@@ -1,16 +1,4 @@
-# Chapter 1 - Effective and Systematic Software Testing
-
-## Caveats
-
-Listing 1.6 mentions **property-based testing** with [jqwik](https://jqwik.net/).
-I'm (still) not sure about the best way to do this property-based testing in
-Ruby. After googling, I think these are the 2 relevant options:
-
-- [Rantly](https://github.com/rantly-rb/rantly)
-- [PropCheck](https://github.com/Qqwy/ruby-prop_check)
-
-I plan to experiment them after reading Chapter 5, which is exactly about
-Property-based testing.
+# Chapter 1 - Effective and systematic software testing
 
 ## Main takeaways
 
@@ -42,3 +30,18 @@ and complex   / manual \         <-- exploratory tests
   |  /          tests           \    should be tested here
   | /----------------------------\
 ```
+
+## Caveats
+
+### Property-based testing
+
+Listing 1.6 mentions **property-based testing** with [jqwik](https://jqwik.net/).
+I'm (still) not sure about the best way to do this property-based testing in
+Ruby. After googling, I think these are the 2 relevant options:
+
+- [Rantly](https://github.com/rantly-rb/rantly)
+- [PropCheck](https://github.com/Qqwy/ruby-prop_check)
+
+I'm not really satisfied with the way I wrote Listing 1.6 in Ruby, but I plan to
+revisit that code reading Chapter 5, which is exactly about Property-based
+testing.

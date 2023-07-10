@@ -6,7 +6,7 @@ require 'minitest/autorun'
 require_relative 'number_utils'
 
 describe '#add' do
-  list_of_test_cases = [
+  test_cases = [
     # [left, right, expected]
     [nil, [7, 2], nil], # T1
     [[], [7, 2], [7, 2]], # T2
@@ -40,7 +40,7 @@ describe '#add' do
     [[9, 9], [1], [1, 0, 0]] # T20
   ]
 
-  list_of_test_cases.each do |left, right, expected|
+  test_cases.each do |left, right, expected|
     it "add(#{left}, #{right}) = #{expected}" do
       if expected.nil?
         assert_nil NumberUtils.add(left, right)
