@@ -1,12 +1,16 @@
 # Effective Software Testing (Ruby)
 
 This repo contains the code examples from "[Effective Software Testing](https://www.manning.com/books/effective-software-testing)"
-book (by Mauricio Aniche), but written in Ruby/Minitest,
-instead of Java/JUnit.
+book (by [Mauricio Aniche](https://github.com/mauricioaniche)), but using
+Ruby/Minitest instead of Java/JUnit.
 
-> 🚧 **Currently a Work in Progress** 🚧
+## Table of Contents
 
-As soon as I finish a chapter, I "translate" the Java/JUnit code to Ruby/Minitest.
+- [Chapter 1. Effective and systematic software testing](01-effective-and-systematic-software-testing/README.md)
+- [Chapter 2. Specification-based testing](02-specification-based-testing/README.md)
+- [Chapter 3. Structural-testing and code coverage](03-structural-testing-and-code-coverage/README.md)
+- [Chapter 4. Designing contracts](04-designing-contracts/README.md)
+- more to be done...
 
 ## Chapter Notes
 
