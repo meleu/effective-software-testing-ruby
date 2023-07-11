@@ -2,12 +2,35 @@
 
 ## Main takeaways
 
+### Code Coverage
+
+**Code coverage should not be used as a number to be achieved**. Rather, coverage
+tools should be used to support developers in performing structural testing
+(that is, understanding what parts are not covered and why).
+
 ### Video explaining MC/DC
 
 Here's a video with the author of the book explaining the process of
 "Modified Condition/Decision Coverage" (aka MC/DC):
 
 <https://youtu.be/HzmnCVaICQ4>
+
+### Mutation Testing
+
+At the end of the chapter the Mutation Testing technique is mentioned, but with
+no examples. The concept is pretty cool and it seems to be an valuable technique,
+but using Aniche's words:
+
+> As a community, we are taking steps toward a solution, but we are not there yet.
+
+I've googled about mutation testing in Ruby.
+
+The [mutant gem](https://github.com/mbj/mutant) seems to be the most mature gem
+for mutation testing in Ruby, however it requires a license to be used (free for
+open source projects, check their README). I didn't try it.
+
+Another gem I stumble upon while googling was [crude-mutant](https://github.com/kellysutton/crude-mutant).
+I followed the instructions in the README and unfortunately it didn't work.
 
 ## Caveats
 
