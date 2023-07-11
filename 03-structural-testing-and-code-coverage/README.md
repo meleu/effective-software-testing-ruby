@@ -11,8 +11,35 @@ Here's a video with the author of the book explaining the process of
 
 ## Caveats
 
+### Limitation: Code-Coverage for branches
+
+For code coverage I'm using simplecov, which doesn't have all the features provided
+by JaCoCo (the tool mentioned in the book).
+
+I noticed that simplecov only counts the "then" and the "else" branches, ignoring
+the branches created by "or" conditions.
+
+Example:
+
+```ruby
+if last == 's' || last == 'r'
+  words += 1
+end
+```
+
+This logic has 4 branches (actually only 3, as `last` would never be simultaneously
+equal to `s` and `r`). If we have 2 tests, one covering the situation where the
+if statement is true, and other for false, simplecov considers this 100% of branch
+covering.
+
+Let's say we have one test where `last == 's'` (the `if` result is true) and another one
+where `last == 'a'` (the `if` result is false). SimpleCov would consider this as
+100% of branch covering even if we didn't test any situation where `last == 'r'`.
+
 ### Code-coverage hightlights in VSCode
 
+- Install the [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters) VSCode extension.
+- In order to have the highlight in the whole line (just like in the book), I set `"coverage-gutters.showLineCoverage": true` (already present in [.vscode/settings.json](../.vscode/settings.json))
 - Install `simplecov` and `simplecov-lcov` (already present in the repo's [Gemfile](../Gemfile)).
 - Add this config to your test (already present in [test_helper.rb](./test_helper.rb)):
 
@@ -27,6 +54,7 @@ SimpleCov::Formatter::LcovFormatter.config do |conf|
 end
 SimpleCov.start do
   enable_coverage :branch
+  # primary_coverage :branch
   formatter SimpleCov::Formatter::MultiFormatter.new(
     [
       SimpleCov::Formatter::LcovFormatter,
@@ -38,5 +66,7 @@ end
 require 'minitest/autorun'
 ```
 
-- Install the [Coverage Gutters](https://marketplace.visualstudio.com/items?itemName=ryanluker.vscode-coverage-gutters) VSCode extension.
-- In order to have the highlight in the whole line (just like in the book), I set `"coverage-gutters.showLineCoverage": true` (already present in [.vscode/settings.json](../.vscode/settings.json))
+After running a test, the coverage report will be generated at `./coverage/index.html`.
+
+If you installed Coverage Gutters, you can toggle the Code Coverage highlights with
+`Ctrl`+`Shift`+`5`.
