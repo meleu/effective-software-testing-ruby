@@ -1,5 +1,14 @@
 # Chapter 4 - Designing contracts
 
+This is a conceptual chapter, none of its code is "runnable".
+
+The translation to Ruby was still a good practice. We can see idiomatic code
+(like `value.negative?` instead of `value < 0` in listing 4.1) and the syntax
+used by RDoc (in listing 4.2).
+
+**NOTE**: the Java `assert` instruction discussed in the chapter doesn't have an
+equivalent in the Ruby language.
+
 ## Main takeaways
 
 ### Pre/Post conditions and invariants
@@ -18,7 +27,7 @@ Whenever changing a contract, we need to reflect on the impact of the change
 A "change in contract" happens when we create a class inheriting from
 another and overwriting a method.
 
-> **NOTE**: Favor composition over inheritance! Here's a talk about it: <https://youtu.be/QKkyq1UE9eU>
+> **NOTE**: Favor composition over inheritance! Here's a talk about it: <https://youtu.be/QKkyq1UE9eU>. If you google about it you'll find a bunch more.
 
 #### Changes in pre-conditions
 
