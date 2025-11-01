@@ -12,8 +12,8 @@ class PlanningPoker
       elsif lowest_estimate.nil? || estimate.value < lowest_estimate.value
         lowest_estimate = estimate
       end
-
-      [lowest_estimate.developer, highest_estimate.developer]
     end
+
+    [lowest_estimate.developer, highest_estimate.developer]
   end
 end
