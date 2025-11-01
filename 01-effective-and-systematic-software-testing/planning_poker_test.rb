@@ -1,6 +1,6 @@
-require 'minitest/autorun'
+require "minitest/autorun"
 
-require_relative 'planning_poker'
+require_relative "planning_poker"
 
 class PlanningPokerTest < Minitest::Test
   def test_reject_nil_input
@@ -12,15 +12,15 @@ class PlanningPokerTest < Minitest::Test
   end
 
   def test_reject_single_estimate
-    estimates = [Estimate.new('Eleanor', 1)]
+    estimates = [Estimate.new("Eleanor", 1)]
 
     assert_raises(IllegalArgumentException) { PlanningPoker.identify_extremes(estimates) }
   end
 
   def test_two_estimates
     estimates = [
-      Estimate.new('Mauricio', 10),
-      Estimate.new('Frank', 5)
+      Estimate.new("Mauricio", 10),
+      Estimate.new("Frank", 5)
     ]
 
     devs = PlanningPoker.identify_extremes(estimates)
@@ -31,9 +31,9 @@ class PlanningPokerTest < Minitest::Test
 
   def test_many_estimates
     estimates = [
-      Estimate.new('Mauricio', 10),
-      Estimate.new('Arie', 5),
-      Estimate.new('Frank', 7)
+      Estimate.new("Mauricio", 10),
+      Estimate.new("Arie", 5),
+      Estimate.new("Frank", 7)
     ]
 
     devs = PlanningPoker.identify_extremes(estimates)
@@ -44,11 +44,11 @@ class PlanningPokerTest < Minitest::Test
 
   def test_developers_with_same_estimates
     estimates = [
-      Estimate.new('Mauricio', 10),
-      Estimate.new('Arie', 5),
-      Estimate.new('Andy', 10),
-      Estimate.new('Frank', 7),
-      Estimate.new('Annibale', 5)
+      Estimate.new("Mauricio", 10),
+      Estimate.new("Arie", 5),
+      Estimate.new("Andy", 10),
+      Estimate.new("Frank", 7),
+      Estimate.new("Annibale", 5)
     ]
 
     devs = PlanningPoker.identify_extremes(estimates)
@@ -59,11 +59,11 @@ class PlanningPokerTest < Minitest::Test
 
   def test_all_developers_with_same_estimates
     estimates = [
-      Estimate.new('Mauricio', 10),
-      Estimate.new('Arie', 10),
-      Estimate.new('Andy', 10),
-      Estimate.new('Frank', 10),
-      Estimate.new('Annibale', 10)
+      Estimate.new("Mauricio", 10),
+      Estimate.new("Arie", 10),
+      Estimate.new("Andy", 10),
+      Estimate.new("Frank", 10),
+      Estimate.new("Annibale", 10)
     ]
 
     devs = PlanningPoker.identify_extremes(estimates)
@@ -75,8 +75,8 @@ class PlanningPokerTest < Minitest::Test
     100.times do
       estimates = estimates_generator
 
-      estimates << Estimate.new('MrLowEstimate', 1)
-      estimates << Estimate.new('MrHighEstimate', 100)
+      estimates << Estimate.new("MrLowEstimate", 1)
+      estimates << Estimate.new("MrHighEstimate", 100)
 
       estimates.shuffle!
 
@@ -97,7 +97,7 @@ class PlanningPokerTest < Minitest::Test
   end
 
   def random_string_generator
-    ('a'..'z').to_a.sample(5).join
+    ("a".."z").to_a.sample(5).join
   end
 
   def random_estimate_between(first, last)
